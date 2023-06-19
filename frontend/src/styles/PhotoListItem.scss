@@ -11,13 +11,14 @@
 }
 
 .photo-list__item {
-  margin: 24px;
+  margin: 24px 24px 0 24px;
   padding: 8px;
   border-width: 0.5px;
   border-color: lightgray;
   border-style: solid;
   border-radius: 8px;
   max-width: fit-content;
+  background-color: white;
 }
 
 .photo-list__image {
@@ -30,8 +31,8 @@
 .photo-list__image {
   border-radius: 8px 8px 0px 0px;
   user-select: none;
-  width: 300px;
-  height: 200px;
+  width: 800px;
+  height: 600px;
   object-fit: cover;
 }
 

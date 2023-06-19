@@ -12,7 +12,7 @@ const PhotoListItem = (props) => {
   };
   
   return (
-    <div>
+    <div className="photo-list__container">
       <div className="photo-list__item">
         <PhotoFavButton photoId={props.id} toggleFavorite={props.toggleFavorite}/>
         <img onClick={() => openModal(props.id)} src={props.imageSource} alt={props.username} className="photo-list__image" />

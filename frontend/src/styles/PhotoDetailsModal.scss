@@ -1,3 +1,8 @@
+.photo-details-modal__container {
+  display: flex;
+  justify-content: center;
+}
+
 .photo-details-modal {
   background-color: white;
   box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
@@ -26,12 +31,13 @@
 }
 
 .photo-details-modal__images {
-  margin-left: 36px;
-  margin-top: 8px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .photo-details-modal__image {
   border-radius: 8px;
+  width: 100%;
 }
 
 .photo-details-modal__top-bar {
@@ -55,6 +61,10 @@
   margin-top: 24px;
   margin-bottom: 24px;
   width: 90%;
+  font-weight: 700;
+  text-decoration: overline;
+  font-family: 'Segoe UI';
+  padding-left: 50px;
 }
 
 .photo-details-modal__item {
@@ -64,5 +74,9 @@
   border-color: lightgray;
   border-style: solid;
   border-radius: 8px;
-  max-width: fit-content;
+}
+
+.photo-details-modal__related {
+  display: flex;
+  flex-wrap: wrap;
 }
