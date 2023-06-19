@@ -1,3 +1,15 @@
+
+.photo-list_fav-icon-svg {
+  color: red;
+}
+
+.photo-list--item {
+  border: 3px solid lightgray;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 .photo-list__item {
   margin: 24px;
   padding: 8px;
@@ -45,4 +57,5 @@
 
 .photo-list__user-location {
   color: #838383;
+  margin: 0;
 }

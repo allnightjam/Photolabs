@@ -1,12 +1,16 @@
 import React from 'react';
+import '../styles/TopicListItem.scss'
 
-import '../styles/TopicListItem'
-
-const TopicListItem = () => {
-  <div className="topic-list__item">
-    {/* Insert React */}
+// a function for generating multiple topics
+const TopicListItem = (props) => {
+  return (
+  <div className="topic-list__item" onClick={props.onClick}>
+      <span> 
+      <h3> {props.label} </h3>
+      </span>
   </div>
-}
+  );
+};
 
 TopicListItem.defaultProps =   {
   "id": "1",

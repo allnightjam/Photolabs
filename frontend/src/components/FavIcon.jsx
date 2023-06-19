@@ -1,5 +1,7 @@
 import React from 'react';
+import '../styles/PhotoListItem.scss';
 
+// a function for displaying favourited photos
 export function FavIcon({
   width, height, fill, outlineWidth, stroke, displayAlert
 }) {
@@ -9,10 +11,10 @@ export function FavIcon({
       {
           !!displayAlert &&
           <circle cx="21" cy="4" r="2.75" fill="#FFFF00" stroke="#C80000" strokeWidth="0.5"/>
-      }
+      };
     </svg>
   );
-}
+};
 
 FavIcon.defaultProps = {
   width: 20,

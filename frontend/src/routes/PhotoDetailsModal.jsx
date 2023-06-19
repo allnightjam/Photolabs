@@ -1,23 +1,48 @@
 import React from 'react';
-
 import '../styles/PhotoDetailsModal.scss'
+import PhotoFavButton from '../components/PhotoFavButton';
 
-export const PhotoDetailsModal = () => (
-  <div className='photo-details-modal'>
-    <button className='photo-details-modal--close-button'>
-      <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clipPath="url(#clip0_428_287)">
-          <path d="M14.0625 3.9375L3.9375 14.0625" stroke="black" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M14.0625 14.0625L3.9375 3.9375" stroke="black" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        <defs>
-          <clipPath id="clip0_428_287">
-          <rect width="18" height="18" fill="white"/>
-          </clipPath>
-        </defs>
-      </svg>
-    </button>
-  </div>
-)
+// a function for displaying modals for individual photos
+export const PhotoDetailsModal = ({ closeModal, id, photos, toggleFavorite }) => {
+  const selectedPhoto = photos.find(photo => photo.id === id); 
+  const similarPhotos = selectedPhoto.similar_photos;
+
+  return (
+    <div className='photo-details-modal'>
+      <button onClick={closeModal} className='photo-details-modal__close-button'>
+        <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clipPath="url(#clip0_428_287)">
+            <path d="M14.0625 3.9375L3.9375 14.0625" stroke="black" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M14.0625 14.0625L3.9375 3.9375" stroke="black" strokeLinecap="round" strokeLinejoin="round"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_428_287">
+            <rect width="18" height="18" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+      <PhotoFavButton photoId={selectedPhoto.id} toggleFavorite={toggleFavorite} />
+      <div>
+        <img src={selectedPhoto.urls.regular} alt="Selected Photo" className="photo-details-modal__image"/>
+      </div>
+      <div className="photo-details-modal__header">
+        <h3> Similar Photos </h3>
+        <div className="photo-details-modal__images">
+          {similarPhotos && Object.values(similarPhotos).length > 0 ? (
+            Object.values(similarPhotos).map((photo) => (
+              <div key={photo.id} className="photo-details-modal__item">
+                <img src={photo.urls.regular} alt="Similar Photo" className="photo-details-modal__image" />
+              </div>
+          ))
+          ) : (
+            <p> No similar photos. </p>
+          )}
+        </div>
+      </div>
+    </div>
+    
+  );
+};
 
 export default PhotoDetailsModal;

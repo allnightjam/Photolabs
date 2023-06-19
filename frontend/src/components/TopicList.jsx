@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../styles/TopicList.scss';
+import TopicListItem from './TopicListItem';
 
-import './TopicList.scss';
+// a function for generating topics
+const TopicList = ({ topics, fetchPhotosAndTopic }) => {
+  const [activeTopicId, setActiveTopicId] = useState(null);
 
-const TopicList = () => {
+  // a function that toggles the 'ActiveTopicId' state and 'fetchPhotosAndTopic' function
+  const handleClick = (topicId) => {
+    setActiveTopicId(topicId);
+    fetchPhotosAndTopic(topicId);
+  };
+
+  return (
   <div className="top-nav-bar__topic-list">
-    {/* Insert React */}
+      {topics.map((topic) => (
+        <TopicListItem
+        key={topic.id}
+        id={topic.id}
+        slug={topic.slug}
+        label={topic.title}
+        active={topic.id === activeTopicId}
+        onClick={() => handleClick(topic.id)}
+        ></TopicListItem>
+      ))}
   </div>
-}
+  );
+};
 
 TopicList.defaultProps = {
   topics: [
