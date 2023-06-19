@@ -32,6 +32,7 @@
 
 .photo-details-modal__images {
   height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -54,6 +55,10 @@
   font-size: 16px;
 }
 
+.photo-details-modal__related-title {
+  text-decoration: overline;
+}
+
 .photo-details-modal__header {
   font-size: 18px;
   font-weight: 500;
@@ -62,21 +67,25 @@
   margin-bottom: 24px;
   width: 90%;
   font-weight: 700;
-  text-decoration: overline;
   font-family: 'Segoe UI';
   padding-left: 50px;
 }
 
 .photo-details-modal__item {
-  margin: 24px;
+  margin: 20px;
   padding: 8px;
   border-width: 0.5px;
   border-color: lightgray;
   border-style: solid;
   border-radius: 8px;
+  width: 24.5%;
 }
 
 .photo-details-modal__related {
   display: flex;
   flex-wrap: wrap;
+}
+
+.photo-details-modal__heart {
+  display: flex;
 }
