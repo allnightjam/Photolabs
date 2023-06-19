@@ -2,7 +2,7 @@
 The PhotoLabs project for the Web Development React course programming. It generates a library for photos in which users can favorite photos and receive notifications.
 
 # Photolabs
-
+https://github.com/allnightjam/photolabs-starter/assets/116188111/1f298eaa-97b1-47f1-8e47-f6421aa387d4
 
 ## Setup
 
